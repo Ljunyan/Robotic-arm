@@ -1,0 +1,2 @@
+probot_anno_moveit_config:probot_demo:probot_description:probot_gazebo
+-DCMAKE_BUILD_TYPE=RelWithDebInfo -G Unix Makefiles -DCATKIN_DEVEL_PREFIX=/home/yang/moveit_ws/devel_isolated -DCMAKE_INSTALL_PREFIX=/home/yang/moveit_ws/install_isolated

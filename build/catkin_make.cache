@@ -1,0 +1,2 @@
+probot_anno_moveit_config:probot_demo:probot_description:probot_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/yang/moveit_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yang/moveit_ws/install -G Unix Makefiles
