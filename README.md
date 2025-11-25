@@ -2,6 +2,17 @@
 
 轻量级 ROS Noetic + MoveIt 工程，用于 Probot 机械臂的仿真、控制与示例。
 
+## 效果展示
+
+![Probot 机械臂概览](images/21.png)
+
+并排展示（HTML 表格）：
+<table><tr>
+<td><img src="./images/23.png" width="300" alt="pose1"/></td>
+<td><img src="./images/25.png" width="300" alt="pose2"/></td>
+</tr></table>
+
+
 ## 项目概览
 本仓库包含 Probot 机械臂的描述、Gazebo 仿真场景、MoveIt 规划配置与若干 demo 节点，适合学习 ROS + MoveIt 的入门与仿真实验。
 
@@ -13,7 +24,7 @@
 - frames.gv — 帧关系的 Graphviz 描述
 - README.md — 本文件
 
-## 功能亮点
+## 亮点
 - Probot 机械臂 URDF 与模型描述
 - Gazebo 仿真场景与插件
 - MoveIt 规划配置与演示
@@ -53,8 +64,6 @@
      rosrun probot_demo <node_name>
      ```
 
-（请根据 repo 中实际的 launch 和节点名称替换上述命令；可在各包目录下查找 *.launch 与可执行文件）
-
 ## 开发与调试
 - 推荐使用 VS Code（仓库内含 .vscode 配置）
 - 修改后重新运行 catkin_make 或使用 catkin_make --pkg <pkg_name>
@@ -67,10 +76,6 @@
   rosdep install --from-paths src --ignore-src -r -y
   ```
 - 若 Launch 文件或节点名不确定，可在包目录使用 ls 查找或使用 roscd/rosls 辅助定位。
-
-## 贡献与许可证
-欢迎提交 issue 和 PR。请在提交时说明复现步骤和测试方法。
-请在仓库根目录添加 LICENSE 文件并在此处说明许可证类型（例如 MIT、Apache-2.0 等）。
 
 ## 参考
 - 仓库内包：probot_description, probot_gazebo, probot_demo, probot_anno_moveit_config
