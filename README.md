@@ -1,11 +1,11 @@
-# Robotic-arm
+# 🤖 Robotic-arm
 
 轻量级 ROS Noetic + MoveIt 工程，用于 Probot 机械臂的仿真、控制与示例。
 
-## 项目概览
-本仓库包含 Probot 机械臂的描述、Gazebo 仿真场景、MoveIt 规划配置与 demo 节点正逆运动学、生成与发布位姿。
+## 📋 项目概览
+本仓库包含 Probot 机械臂的描述、Gazebo 仿真场景、MoveIt 规划配置与 demo 节点，支持正逆运动学、轨迹生成与位姿发布。
 
-## 效果展示
+## 🎯 效果展示
 
 ![Probot 机械臂概览](images/21.png)
 
@@ -14,68 +14,92 @@
 <td><img src="./images/25.png" width="500" alt="pose2"/></td>
 </tr></table>
 
-## 主要目录
-- src/ — ROS 包源代码（probot_description、probot_gazebo、probot_demo、probot_anno_moveit_config 等）
-- build/、build_isolated/ — 构建产物
-- devel/、devel_isolated/ — catkin 开发空间
-- images/ — 项目图片资源
-- frames.gv — 帧关系的 Graphviz 描述
-- README.md — 本文件
+## 📁 主要目录
+- `src/` — ROS 包源代码（probot_description、probot_gazebo、probot_demo、probot_anno_moveit_config 等）
+- `build/`、`build_isolated/` — 构建产物
+- `devel/`、`devel_isolated/` — catkin 开发空间
+- `images/` — 项目图片资源
+- `frames.gv` — 帧关系的 Graphviz 描述
+- `README.md` — 本文件
 
-## 亮点
+## ✨ 主要特性
 - Probot 机械臂 URDF 与模型描述
-- Gazebo 仿真场景与插件
-- MoveIt 规划配置与演示
-- 示例节点与 launch 文件，便于快速测试
+- Gazebo 仿真场景与物理插件
+- MoveIt 运动规划配置与交互演示
+- 示例节点与 launch 文件，便于快速验证与测试
 
-## 环境
-- Ubuntu 20.04
-- ROS Noetic
-- MoveIt for Noetic（若需路径规划与交互）
-- Gazebo（若需仿真）
+## ⚙️ 环境要求
+- **操作系统**：Ubuntu 20.04
+- **ROS 版本**：Noetic
+- **仿真工具**：Gazebo（可选，用于仿真演示）
+- **规划库**：MoveIt for Noetic（可选，用于路径规划与交互）
 
-## 快速开始（在本机执行）
-1. 打开终端并初始化 ROS 环境：
-   ```sh
-   source /opt/ros/noetic/setup.bash
-   ```
-2. 进入工作区并构建（在 Windows 下请在 WSL/Ubuntu 中执行）：
-   ```sh
-   cd workspace
-   catkin_make
-   ```
-3. 构建完成后加载开发环境：
-   ```sh
-   source devel/setup.bash
-   ```
-4. 运行示例（示例 launch 位于各包内）：
-   - 启动 Gazebo 仿真（示例）：
-     ```sh
-     roslaunch probot_gazebo probot_world.launch
-     ```
-   - 启动 MoveIt 演示：
-     ```sh
-     roslaunch probot_anno_moveit_config demo.launch
-     ```
-   - 运行 demo 节点：
-     ```sh
-     rosrun probot_demo <node_name>
-     ```
+## 🚀 快速开始
 
-## 开发与调试
-- 推荐使用 VS Code（仓库内含 .vscode 配置）
-- 修改后重新运行 catkin_make 或使用 catkin_make --pkg <pkg_name>
-- 使用 rostopic、rviz、rqt_graph 等工具进行调试与可视化
+### 1. 初始化 ROS 环境
+```bash
+source /opt/ros/noetic/setup.bash
+```
 
-## 常见问题
-- 如果找不到包或依赖，检查 package.xml 并执行 rosdep install：
-  ```sh
-  rosdep update
-  rosdep install --from-paths src --ignore-src -r -y
+### 2. 进入工作区并构建
+```bash
+cd workspace
+catkin_make
+```
+> **注**：Windows 用户请在 WSL/WSL2 或 Ubuntu 虚拟机中执行上述命令
+
+### 3. 加载开发环境
+```bash
+source devel/setup.bash
+```
+
+### 4. 运行示例
+
+**启动 Gazebo 仿真**（带物理引擎）：
+```bash
+roslaunch probot_gazebo probot_world.launch
+```
+
+**启动 MoveIt 演示**（交互式规划）：
+```bash
+roslaunch probot_anno_moveit_config demo.launch
+```
+
+**运行 demo 节点**（正逆运动学示例）：
+```bash
+rosrun probot_demo <node_name>
+```
+
+## 🛠️ 开发与调试
+
+- **推荐编辑器**：VS Code（仓库内含 `.vscode` 配置）
+- **重新编译**：修改源代码后运行
+  ```bash
+  catkin_make
+  # 或仅编译特定包
+  catkin_make --pkg <package_name>
   ```
-- 若 Launch 文件或节点名不确定，可在包目录使用 ls 查找或使用 roscd/rosls 辅助定位。
+- **可视化工具**：使用 `rviz`、`rostopic`、`rqt_graph` 等进行调试与数据监控
 
-## 参考
-- 仓库内包：probot_description, probot_gazebo, probot_demo, probot_anno_moveit_config
-- frames.gv：用于可视化坐标帧关系
+## ❓ 常见问题
 
+**问题 1：找不到包或缺少依赖**  
+解决方案：
+```bash
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+**问题 2：Launch 文件或节点不确定位置**  
+解决方案：使用以下命令快速定位：
+```bash
+roscd <package_name>
+rosls <package_name>
+# 或手动查看包目录结构
+```
+
+## 📚 参考资源
+- **核心包**：probot_description, probot_gazebo, probot_demo, probot_anno_moveit_config
+- **坐标帧可视化**：`frames.gv`（可用 Graphviz 工具打开）
+- **ROS 文档**：https://wiki.ros.org/noetic
+- **MoveIt 文档**：https://moveit.ros.org/
