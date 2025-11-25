@@ -8,8 +8,8 @@
 
 并排展示（HTML 表格）：
 <table><tr>
-<td><img src="./images/23.png" width="300" alt="pose1"/></td>
-<td><img src="./images/25.png" width="300" alt="pose2"/></td>
+<td><img src="./images/23.png" width="500" alt="pose1"/></td>
+<td><img src="./images/25.png" width="500" alt="pose2"/></td>
 </tr></table>
 
 
