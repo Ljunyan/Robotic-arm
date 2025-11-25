@@ -2,19 +2,17 @@
 
 轻量级 ROS Noetic + MoveIt 工程，用于 Probot 机械臂的仿真、控制与示例。
 
+## 项目概览
+本仓库包含 Probot 机械臂的描述、Gazebo 仿真场景、MoveIt 规划配置与 demo 节点正逆运动学、生成与发布位姿。
+
 ## 效果展示
 
 ![Probot 机械臂概览](images/21.png)
 
-并排展示（HTML 表格）：
 <table><tr>
 <td><img src="./images/23.png" width="500" alt="pose1"/></td>
 <td><img src="./images/25.png" width="500" alt="pose2"/></td>
 </tr></table>
-
-
-## 项目概览
-本仓库包含 Probot 机械臂的描述、Gazebo 仿真场景、MoveIt 规划配置与若干 demo 节点，适合学习 ROS + MoveIt 的入门与仿真实验。
 
 ## 主要目录
 - src/ — ROS 包源代码（probot_description、probot_gazebo、probot_demo、probot_anno_moveit_config 等）
